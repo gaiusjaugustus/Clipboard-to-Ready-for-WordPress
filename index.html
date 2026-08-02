@@ -68,7 +68,7 @@
       if (!markdownText) return '';
       
       // 1. Remove <mark> and </mark> tags
-      let cleaned = markdownText.replace(/<\/?mark>/gi, '');
+      let cleaned = markdownText.replace(/<\/?mark[^>]*>/gi, '');
       
       // 2. Parse Markdown lines into Gutenberg blocks
       let lines = cleaned.split('\n');
