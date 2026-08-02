@@ -142,6 +142,20 @@
     }
 
     function parseInlineMarkdown(text) {
+      console.log('1: ' + text.replace(/<mark [^>]*>(.*?)<\/mark>/g, '$1'));
+      console.log('2: ' + text
+        .replace(/<mark [^>]*>(.*?)<\/mark>/g, '$1')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'));
+      console.log('3: ' + text
+        .replace(/<mark [^>]*>(.*?)<\/mark>/g, '$1')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
+        .replace(/\*(.*?)\*/g, '<em>$1</em>'));
+      console.log('4: ' + text
+        .replace(/<mark [^>]*>(.*?)<\/mark>/g, '$1')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')             
+        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>'));
+      
       return text
         .replace(/<mark [^>]*>(.*?)<\/mark>/g, '$1')
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
