@@ -142,6 +142,7 @@
     }
 
     function parseInlineMarkdown(text) {
+      console.log('0: ' + text);
       console.log('1: ' + text.replace(/<mark[^>]*>([^<]*)<\/mark>/gi, '$1'));
       console.log('2: ' + text
         .replace(/<mark [^>]*>(.*?)<\/mark>/g, '$1')
