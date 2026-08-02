@@ -143,10 +143,10 @@
 
     function parseInlineMarkdown(text) {
       return text
+        .replace(/<mark [^>]*>(.*?)<\/mark>/g, '$1')
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
         .replace(/\*(.*?)\*/g, '<em>$1</em>')             
-        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
-        .replace(/<mark [^>]*>(.*?)<\/mark>/g, '$1'); 
+        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>'); 
     }
 
     // UI Orchestration functions
